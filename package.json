@@ -1,0 +1,24 @@
+{
+  "name": "programming-team-gnerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PatL8822/Programming-Team-Gnerator.git"
+  },
+  "author": "Pat Lubak",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/PatL8822/Programming-Team-Gnerator/issues"
+  },
+  "homepage": "https://github.com/PatL8822/Programming-Team-Gnerator#readme",
+  "dependencies": {
+    "inquirer": "^9.1.4",
+    "jest": "^29.2.1"
+  }
+}
