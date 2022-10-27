@@ -1,10 +1,10 @@
 
 const inquirer = require('inquirer');
 const fs = require('fs');
-/*const employee = require('../lib/Employee.js')
-const engineer = require('../lib/Engineer.js')
-const intern = require('../lib/Intern.js')
-const manager = require('../lib/Manager.js');*/
+const Employee = require('../lib/Employee')
+const Engineer = require('../lib/Engineer')
+const Intern = require('../lib/Intern')
+const Manager = require('../lib/Manager');
 //const { type } = require('os');
 
 
@@ -64,7 +64,7 @@ function startRoster() {
                 },
             },
         ]).then(data => {
-            const newEmployee = (data.employeeName, data.employeeId, data.employeeEmail);
+            const newEmployee = new Employee(data.employeeName, data.employeeId, data.employeeEmail);
             team.push(newEmployee);
             selectTeamMember();
         })
@@ -97,12 +97,12 @@ function startRoster() {
             {
                 type: 'input',
                 message: 'Enter engineer GitHub username.',
-                name: 'engineerGitHub',
+                name: 'gitHub',
                 validate: (value) => { if (value) { return true } else { return 'Enter username.' } }
 
             },
         ]).then(data => {
-            const newEngineer = (data.engineerName, data.engineerId, data.engineerEmail, data.engineerGitHub);
+            const newEngineer = new Engineer(data.engineerName, data.engineerId, data.engineerEmail, data.gitHub);
             team.push(newEngineer);
             selectTeamMember();
         });
@@ -140,7 +140,7 @@ function startRoster() {
 
             },
         ]).then(data => {
-            const newIntern = (data.internName, data.internId, data.internEmail, data.internSchoolName);
+            const newIntern = new Intern(data.internName, data.internId, data.internEmail, data.internSchoolName);
             team.push(newIntern);
             selectTeamMember();
         });
@@ -173,12 +173,12 @@ function startRoster() {
             {
                 type: 'input',
                 message: 'Enter manager office number.',
-                name: 'managerOfficeNumber',
+                name: 'officeNumber',
                 validate: (value) => { if (value) { return true } else { return 'Enter office number.' } }
 
             },
         ]).then(data => {
-            const newManager = (data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
+            const newManager = new Manager(data.managerName, data.managerId, data.managerEmail, data.managerOfficeNumber);
             team.push(newManager);
             selectTeamMember();
         });
